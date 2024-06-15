@@ -3,6 +3,7 @@ import { Navbar } from './components/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import { Pokemones } from './pages/Pokemones'
 import { Detalle } from './pages/Detalle'
+import { Home } from './pages/Home'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <>
       <Navbar/>
       <Routes>
-        <Route path='/' element={<h1>Home</h1>} />
+        <Route path='/' element={<Home/>} />
         <Route path='/pokemones' element={<Pokemones/>} />
         <Route path='/pokemones/:name' element={<Detalle/>} />
       </Routes>

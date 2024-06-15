@@ -15,7 +15,7 @@ export const Pokemones = () => {
             const response = await fetch(URL);
             const { results } = await response.json();
             setPokemones(results);
-            console.log(results);
+            //console.log(results);
         } catch (error) {
             console.error("No hay pokemones");
         }
@@ -27,13 +27,16 @@ export const Pokemones = () => {
 
     return (
         <>
-            <select value={name} onChange={(e) => {setName(e.target.value)} }>
-                <option value="" disabled defaultValue>Selecciona tu Pokemon</option>
-                {
-                    pokemones.map(({ name }) => <option key={name} value={name}>{name}</option>)
-                }
-            </select>
-            <button onClick={()=>navigate(`/pokemones/${name}`)} className='btn btn-primary m-3'>Ver Pokemon</button>
+            <div className='pokemones-page m-3'>
+                <h1>Selecciona un pokemón</h1>
+                <select value={name} onChange={(e) => { setName(e.target.value) }} className='form-select pokemones-list'>
+                    <option value="" disabled defaultValue>Pokemones</option>
+                    {
+                        pokemones.map(({ name }) => <option key={name} value={name}>{name}</option>)
+                    }
+                </select>
+                <button onClick={() => navigate(`/pokemones/${name}`)} className='btn btn-dark m-3'>Ver Detalle</button>
+            </div>
         </>
     );
 }

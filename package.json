@@ -2,6 +2,7 @@
   "name": "react-router-2",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://paulabravic.github.io/mod5-react2-router2-pokemon",
   "type": "module",
   "scripts": {
     "dev": "vite",
